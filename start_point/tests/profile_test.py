@@ -10,27 +10,29 @@ class TestProfile(unittest.TestCase):
         self.movie_1 = Movie("The Fugitive", "Andrew Daivs", 9)
         self.movie_2 = Movie("Hunger Games", "Gary Ross", 7)
 
+        self.favourites = [self.movie_1, self.movie_2]
+
         self.profile_1 = Profile("harrisonF", "myP@assword")
 
-        
+        self.new_fave = Movie("Star Trek", "JJ Abrhams", 9)
 
     # Test a Profile can add a favourite Movie
-    def test_add_movie_to_favourites(self): # always only reference self for tests 
-        profile.add_movie(self, new_fave)
-        self.assertEqual(3, len(self.profile.favourites))
+    def test_add_movie_to_favourites(self): # always onlßy reference self for tests 
+        self.profile_1.add_movie(self.new_fave)
+        self.assertEqual(1, len(self.profile_1.favourites))
 
 
     # Test a Profile can remove a given Movie from favourites
     @unittest.skip("delete this line to run the test")
     def test_remove_movie_from_favourites(self):
-        profile.remove_movie(self, old_fave
-        self.assertEqual(2, len(self.profile.favourites))
+        self.profile_1.remove_movie(self, old_fave)
+        self.assertEqual(2, len(self.profile_1.favourites))
 
 
     # Test a Profile can return a list of Favourites
     @unittest.skip("delete this line to run the test")
     def test_return_favourites(self):
-        profile.return_favourites(self)
+        self.profile_1.return_favourites(self)
         self.assertEqual(self.profile_1.favourites)
 
    
@@ -38,3 +40,9 @@ class TestProfile(unittest.TestCase):
 # need to change profile to reference profile_1 object in test
 # make list of self.profile_1's favourites›
 # make new_fave movie object to add.
+
+# Absolutely
+
+# Don't forget self.profile probably for most tests
+
+# And in the last one, you can check if the return value of your function is the same as the original movie list from the setUp up top

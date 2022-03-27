@@ -9,7 +9,7 @@ Online streaming services such as Netflix often allow a user to add profiles to 
 
 ![Accounts to profiles diagram](img/accounts_and_profiles.png)
 
-The relationships between the classes in this case are what we call **one-to-many**. I.E. One account has many profiles and one profile has many accounts. An **Account** object has a list of **Profile** objects and a **Profile** object has a list of **Movie** objects.
+The relationships between the classes in this case are what we call **one-to-many**. I.E. One account has many profiles and one profile has many movies. An **Account** object has a list of **Profile** objects and a **Profile** object has a list of **Movie** objects.
 
 The methods of the classes are also defined on the diagram. These include the argument type and return type. For example, the get_profiles() method takes no arguments and returns a List.
 
