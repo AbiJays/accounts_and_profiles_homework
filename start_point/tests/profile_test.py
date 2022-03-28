@@ -30,10 +30,10 @@ class TestProfile(unittest.TestCase):
 
 
     # Test a Profile can return a list of Favourites
-    @unittest.skip("delete this line to run the test")
+#   @unittest.skip("delete this line to run the test")
     def test_return_favourites(self):
-        self.profile_1.return_favourites(self)
-        self.assertEqual(self.profile_1.favourites)
+        result = return_favourites(self.profile_1.favourites)
+        self.assertEqual(self.profile_1.favourites, result)
 
    
 # TO DO
