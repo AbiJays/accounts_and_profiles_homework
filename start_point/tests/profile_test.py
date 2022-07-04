@@ -14,26 +14,29 @@ class TestProfile(unittest.TestCase):
 
         self.profile_1 = Profile("harrisonF", "myP@assword")
 
-        self.new_fave = Movie("Star Trek", "JJ Abrhams", 9)
+        self.movie = Movie("Star Trek", "JJ Abrhams", 9)
 
     # Test a Profile can add a favourite Movie
     def test_add_movie_to_favourites(self): # always onlßy reference self for tests 
-        self.profile_1.add_movie(self.new_fave)
+        self.profile_1.add_movie(self.movie)
         self.assertEqual(1, len(self.profile_1.favourites))
 
 
     # Test a Profile can remove a given Movie from favourites
-    @unittest.skip("delete this line to run the test")
+    # @unittest.skip("delete this line to run the test")
     def test_remove_movie_from_favourites(self):
-        self.profile_1.remove_movie(self, old_fave)
-        self.assertEqual(2, len(self.profile_1.favourites))
+        self.profile_1.add_movie(self.movie_1)
+        self.profile_1.add_movie(self.movie_2)
+        self.profile_1.remove_movie(self, self.movie)
+        self.assertEqual(1, len(self.profile_1.favourites))
 
 
     # Test a Profile can return a list of Favourites
 #   @unittest.skip("delete this line to run the test")
     def test_return_favourites(self):
-        result = return_favourites(self.profile_1.favourites)
-        self.assertEqual(self.profile_1.favourites, result)
+        self.profile_1.add_movie(self.movie_1)
+        self.profile_1.add_movie(self.movie_2)
+        self.assertEqual([self.movie_1, self.movie_2], self.profile_1.favourites)
 
    
 # TO DO
